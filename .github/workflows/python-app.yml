@@ -36,11 +36,10 @@ jobs:
       run: |
         mkdir testresults
         pytest Tests/unit_tests --junitxml=./testresults/test-results.xml
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v2.2.2
+      
+    - name: Publish Unit Test Results
+      # You may pin to the exact commit or the version.
+      # uses: EnricoMi/publish-unit-test-result-action@ea8720de4a2e723f8204d44fc0178744cf401c1a
+      uses: EnricoMi/publish-unit-test-result-action@v1.9
       with:
-        name: UnitTestResults
-        path: ./testresults/test-results.xml
-
-    
-    
+        files: ./testresults/test-results.xml
