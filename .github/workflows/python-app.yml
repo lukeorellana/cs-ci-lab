@@ -35,7 +35,7 @@ jobs:
       continue-on-error: false
       run: |
         mkdir testresults
-        pytest Tests/unti_tests --junitxml=./testresults/test-results.xml
+        pytest Tests/unit_tests --junitxml=./testresults/test-results.xml
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.2
       with:
